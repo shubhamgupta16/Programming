@@ -1,0 +1,46 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title }}{% endblock %}
+
+{% block extrastyle %}
+<style>
+    #header {
+        background-color: #020f00;
+    }
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: #4ae436;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .module h2, .module caption, .inline-group h2 {
+        background: #d2691e; !important;
+    }
+    .dashboard #content {
+        width: auto;
+        margin-right: 0px;
+    }
+    div.breadcrumbs {
+        background: #d2691e;
+        padding: 10px 40px;
+        border: none;
+        font-size: 14px;
+        color: #c4dce8;
+        text-align: left;
+    }
+    #content-related {
+        transform: scale(0);
+        /* opacity: 0; */
+        background: #f8f8f8;
+    }
+</style>
+
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
