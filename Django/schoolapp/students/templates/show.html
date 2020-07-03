@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Student Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <style>
+        table, th, td{
+            border: solid black;
+            border-collapse: collapse;
+        }
+        a, u {
+            text-decoration: none;
+        }
+        a:link {
+        color: black;
+        }
+        a:visited {
+        color: black;
+        }
+        a:hover {
+        color: black;
+        }
+        a:active {
+        color: black;
+        }
+        .button {
+            border: none;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+        .button4 {border-radius: 12px;}
+    </style>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>
+        <th>Roll No</th>
+        {% comment %} <th>First Name</th>  
+        <th>Last Name</th>   {% endcomment %}
+        <th>Student Name</th>
+        <th>Age</th>
+        {% comment %} <th>Date of Birth</th>   {% endcomment %}
+        <th>Gender</th>  
+        <th>Father Name</th>
+        <th>Mother Name</th>  
+        <th>Address</th>
+        <th>Date of Take Admission</th>
+        <th>Last Modified in Form</th>
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for student in showdata %}  
+    <tr>
+        <td>{{ student.roll_no }}</td>  
+        <td>{{ student.first_name }} {{ student.last_name }}</td>  
+        <td>{{ student.age }}</td>
+        {% comment %} <td>{{ student.date_of_birth }}</td>   {% endcomment %}
+        <td>{{ student.gender }}</td>
+        <td>{{ student.father_name }}</td>
+        <td>{{ student.mother_name }}</td>
+        <td>{{ student.address }}</td>
+        <td>{{ student.registration_date }}</td>
+        <td>{{ student.last_modified }}</td> 
+        <td>  
+            <button class="button button4" style=" background:#00FF57;"><a href="/edit/{{ student.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a></button>  
+        </td>    
+        <td>
+            <button class="button button4" style="background:#FF0000;"><a href="/delete/{{ student.id }}">Delete</a></button>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><button class="button button4" style=" background:#0040FF;"><a href="/" class="btn btn-primary">Add New Record</a></button></center>  
+</body>  
+</html>

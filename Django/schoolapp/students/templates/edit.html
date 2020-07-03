@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        .button {
+            border: none;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button4 {
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <form align="center" method="POST" class="post-form" action="/update/{{student.id}}">
+        {% csrf_token %}
+        <div class="container" style="background:lightgrey; height:100%;">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Update Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <br>
+                {% comment %} <label class="col-sm-2 col-form-label">First Name:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    First Name:<input type="text" name="first_name" id="id_first_name" required maxlength="30"
+                        value="{{ student.first_name }}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <br>  
+                {% comment %} <label class="col-sm-2 col-form-label">Last Name:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    Last Name:<input type="text" name="last_name" id="id_last_name" required maxlength="30"
+                        value="{{ student.last_name }}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <br>
+                {% comment %} <label class="col-sm-2 col-form-label">Age:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    Age:<input type="number" name="age" id="id_age" value="{{ student.age }}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <br>
+                {% comment %} <label class="col-sm-2 col-form-label">Gender:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    Gender:
+                    <input type="radio" id="id_male" name="gender" value="{{ student.gender }}" />
+                    <label for="male">Male</label>
+                    <input type="radio" id="id_female" name="gender" value="{{ student.gender }}" />
+                    <label for="female">Female</label><br>
+                </div>
+            </div>
+            <div class="form-group row">
+                <br>
+                {% comment %} <label class="col-sm-2 col-form-label">Roll No:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    Roll No:<input type="number" name="roll_no" id="id_roll_no" value="{{ student.roll_no }}" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <br>
+                {% comment %} <label class="col-sm-2 col-form-label">Father Name:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    Father Name:<input type="text" name="father_name" id="id_father_name" required maxlength="50"
+                        value="{{ student.father_name }}" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <br>
+                {% comment %} <label class="col-sm-2 col-form-label">Mother Name:</label>   {% endcomment %}
+                <div class="col-sm-4">
+                    Mother Name:<input type="text" name="mother_name" id="id_mother_name" required maxlength="50"
+                        value="{{ student.mother_name }}" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <br>
+                <label class="col-sm-2 col-form-label"><br>Address:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="address" id="id_address" style="width: 301.600px; height: 152px;" required maxlength="500"
+                        value="{{ student.address }}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="button button4" style=" background:#0040FF; color:black;">Update</button> 
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

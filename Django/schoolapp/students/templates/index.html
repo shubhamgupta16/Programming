@@ -1,0 +1,108 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/> 
+    <style>
+      .button {
+            border: none;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+        .button4 {border-radius: 12px;}
+    </style> 
+</head>  
+<body>
+<form align="center" method="POST" class="post-form" action="/">  
+        {% csrf_token %}  
+    <div class="container" style="background:lightgrey; height:100%;">  
+    <br>  
+        <div class="form-group row">  
+          <label class="col-sm-1 col-form-label"></label>  
+          <div class="col-sm-4">  
+          <h3>Enter Details</h3>  
+          </div>  
+        </div>  
+
+        <div class="form-group row">  
+          <br>
+          {% comment %} <label class="col-sm-2 col-form-label">First Name:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            First Name:{{ form.first_name }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">
+          <br>  
+          {% comment %} <label class="col-sm-2 col-form-label">Last Name:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            Last Name:{{ form.last_name }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          {% comment %} <label class="col-sm-2 col-form-label">Age:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            Age:{{ form.age }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          {% comment %} <label class="col-sm-2 col-form-label">Gender:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            Gender:{{ form.gender }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          {% comment %} <label class="col-sm-2 col-form-label">Roll No:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            Roll No:{{ form.roll_no }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          {% comment %} <label class="col-sm-2 col-form-label">Father Name:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            Father Name:{{ form.father_name }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          {% comment %} <label class="col-sm-2 col-form-label">Mother Name:</label>   {% endcomment %}
+          <div class="col-sm-4">  
+            Mother Name:{{ form.mother_name }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          <label class="col-sm-2 col-form-label"><br>Address:</label>  
+          <div class="col-sm-4">  
+            {{ form.address }}  
+          </div>  
+        </div>
+
+        <div class="form-group row">  
+          <br>
+          <label class="col-sm-1 col-form-label"></label>  
+          <div class="col-sm-4">  
+          <button type="submit" class="button button4" style=" background:#0040FF; color:black;">Submit</button>  
+          </div>  
+        </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
